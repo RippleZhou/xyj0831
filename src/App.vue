@@ -28,23 +28,86 @@
         <img src="./assets/img/select.png" alt="">
       </div>
     </div>
-    <router-view></router-view>
+    <div class="container_month f0 w100">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="month_show">
+                        <img src="./assets/img/Second-month.png" style="width:100%;">
+                        <span><img src="./assets/img/xiala2.png" alt=""></span>
+                        <div class="month-dis">
+                            <ul>
+                                <li id="first-xyj"><a href="javascript:void(0);">第一期</a></li>
+                                <li id="second-xyj"><a href="javascript:void(0);">第二期</a></li>
+                                <li id="third-xyj"><a href="javascript:void(0);">第三期</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td class="" id="show-firstWeek"><img src="./assets/img/First-week.png">
+                        <span class="container_going"></span>
+                    </td>
+                    <td class="" id="show-secondWeek"><img src="./assets/img/Second-weeks.png">
+                        <span class="container_going"></span>
+                    </td>
+                    <td class="" id="show-thirdWeek"><img src="./assets/img/Third-weeks.png">
+                        <span class="container_going   container_current"></span>
+                    </td>
+                    <td class="" id="show-monthWeek"><img src="./assets/img/Month.png">
+                        <span class="container_going"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+    <div class="xunyanji_container f0 w100">
+        <router-view></router-view>
+    </div>
+    <div class="show_footer">
+        <img src="./assets/img/space.jpg" alt="">
+    </div>  
+    <div class="xunyanji_foot f0 w100">
+        <div class="plan">
+            <img src="./assets/img/plan.jpg" alt="">
+        </div>
+        <div class="imgs">
+            <img src="./assets/img/25.jpg" alt="">
+        </div>
+    </div> 
+    <router-view>
+      
+    </router-view>
   </div>
 </template>
 
 <script>  
   import Hello from './components/Hello'
   import Vheader from './components/Vheader'
+
 export default {
   name: 'Home',
   components: {
     Hello,
     Vheader
+  },
+  data () {
+    return {
+        msg: [        
+          {
+            name : '倪',
+            num:213
+          },
+          {
+            name : 'Monologue',
+            num:151
+          },
+      ]
+    }
   }
 }
 </script>
 
 <style>
+
 a {
   text-decoration: none;  
 }
@@ -94,6 +157,133 @@ img{
 }
 .joinUs span {
   flex:1.5;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.container_month{
+    width: 100%;
+    background: #cecece;
+    background: url(./assets/img/07.png) no-repeat;
+    background-size: 100% 100%;
+}
+.container_month table,.container_month tbody,.container_month tr{
+    height: 100%;
+    width: 100%;
+}
+.container_month table{
+    height: 100%;
+    width: 100%;
+}
+.container_current{
+    border-bottom:1px solid #fff;
+}
+/*月赛预览导航*/
+.month_show {
+    position: relative;
+}
+.month-dis{
+    display:none;
+}
+.month-show{
+    display: block;
+}
+.month_show > div{
+    position: absolute;
+    z-index: 99;
+    left: -3%;
+    width: 100%;
+    background: #913a71;
+}
+.month_show ul{
+    text-align: center;
+}
+.month_show li a{
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    height: 100%;
+    font-size: 0.3rem;
+    color: #ccc;
+}
+
+/*周赛当前状态和已公示状态*/
+.dsn{
+    display: none;
+}
+.f0{
+  font-size:0;
+}
+.container_pass,.container_going,.container_next{
+    display: block;
+    margin: 6% auto;
+    color: #fff;
+    font-size: 0.1rem;
+    text-align: center;
+}
+/*导航栏间距*/
+.container_month td{
+    padding: 0.1rem;
+}
+/*导航栏相对定位*/
+
+.xunyanji_container .first,.xunyanji_container .third,.xunyanji_container .fourth{
+    position: relative;
+    display: flex;
+}
+.xunyanji_container .first > div {
+  flex:1;
+}
+/*flex布局*/
+/*.xunyanji_container span.show_photo,.xunyanji_container span.show_rank{
+    display: inline-flex;*/
+    /*display: -webkit-inline-flex;*/ /* Safari */
+/*    width: 50%;
+}
+*/
+.show_rank img,.show_photo img{
+     height: 100%;
+}
+.show .second{
+    position: relative;
+}
+.change_flex{
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+.dsplay{
+    display: inline-block;
+}
+.w100{
+    width:100%;
+}
+.w50{
+    width:50%;
+}
+.fourth{
+    background:url('./assets/img/bgc.jpg') no-repeat;
+    background-size: cover;
+}
+.fourth {
+    color:#ccc;
+    font-size: .5rem;
+}
+.more_join{
+    background: url(./assets/img/space.jpg) no-repeat;
+    background-size:100% 100%;
+}
+div.more_rank_show span.show_rank,div.more_join span.join{
+    display: table;
+    height: 100%;
+}
+div.more_rank_show span.show_rank:first-child span,div.more_join span.join:first-child span{
+    font-size: 0.2rem;
+    color:#ccc;
+    display: table-cell;    /*ie7和ie6都不能识别 display: table-cell;*/
+    vertical-align: middle;
+    text-align: center;
 }
 
 </style>
