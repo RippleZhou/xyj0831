@@ -59,9 +59,7 @@
             </tbody>
         </table>  
     </div>
-    <div class="xunyanji_container f0 w100">
-        <router-view></router-view>
-    </div>
+    <router-view></router-view>
     <div class="show_footer">
         <img src="./assets/img/space.jpg" alt="">
     </div>  
@@ -73,9 +71,6 @@
             <img src="./assets/img/25.jpg" alt="">
         </div>
     </div> 
-    <router-view>
-      
-    </router-view>
   </div>
 </template>
 

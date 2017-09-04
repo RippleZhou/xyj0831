@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="xunyanji_container">
       <div id="show-firstmonth" class="">
           <div class="show f0 w100">
               <div class="first change_flex">
@@ -8,18 +8,18 @@
                     <img src="../assets/img/1-1-1.png">
                   </div>
                   <div class="show_rank">
-                      <span style="font-size:1rem;padding: 0px 8px;font-size: 1.4rem;position: absolute;top: 65%;left: 50%;color: #ffffff;letter-spacing: 0.2em;font-family: fantasy;">{{msg.name}} ~
+                      <span style="font-size:1rem;padding: 0px 8px;font-size: 1.4rem;position: absolute;top: 65%;left: 50%;color: #ffffff;letter-spacing: 0.2em;font-family: fantasy;" v-for="data in msg" v-bind:key="data.id">{{data.name}} ~
                       </span>
-                      <span style="font-size:1rem;padding: 0px 8px;font-size: 1.4rem;position: absolute;top: 80%;left: 50%;color:#ffffff;letter-spacing:  0.2em;font-family: sans-serif;">{{msg.num}}票
+                      <span style="font-size:1rem;padding: 0px 8px;font-size: 1.4rem;position: absolute;top: 80%;left: 50%;color:#ffffff;letter-spacing:  0.2em;font-family: sans-serif;" v-for="data in msg" v-bind:key="data.id">{{data.num}} 票
                       </span>
                       <img src="../assets/img/13.jpg">
                   </div>
               </div>
               <div class="second change_flex f0 w100">
                   <div class="two_rank_show change_flex w50">
-                      <span style="padding: 0px 4px;font-size: 0.1rem;position: absolute;top: 65%;left: 0%;color:#ffffff;font-family: serif;">Monologue
+                      <span style="padding: 0px 4px;font-size: 0.1rem;position: absolute;top: 65%;left: 0%;color:#ffffff;font-family: serif;" v-for="data in msg" v-bind:key="data.id">{{data.name}}
                       </span>
-                      <span style="padding: 0px 3px;font-size: 0.2rem;position: absolute;top: 84%;left: 0%;color:#ffffff;letter-spacing: 0.2em;font-family: cursive;">151票
+                      <span style="padding: 0px 3px;font-size: 0.2rem;position: absolute;top: 84%;left: 0%;color:#ffffff;letter-spacing: 0.2em;font-family: cursive;" v-for="data in msg" v-bind:key="data.id">{{data.num}}票
                       </span>
                       <span class="show_rank change_flex w50">
                           <img src="../assets/img/14.jpg">
@@ -92,7 +92,18 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: [
+        {
+          id:0,
+          name:'ni',
+          num:191
+        },
+        {
+          id:1,
+          name:'wang',
+          num:222
+        }
+      ]
     }
   }
 }
