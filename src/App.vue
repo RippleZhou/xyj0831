@@ -1,6 +1,7 @@
 <template>
   <div id="Home">
-    <div class="xunyanji_top">
+    <router-view></router-view>
+    <!-- <div class="xunyanji_top">
       <div class="logo" :style="{'background-image': 'url(' + require('./assets/img/top1.png') + ')'}">
         <img src="./assets/img/1.png" alt="">
         <img src="./assets/img/chuban.png" alt="">
@@ -37,22 +38,22 @@
                         <span><img src="./assets/img/xiala2.png" alt=""></span>
                         <div class="month-dis">
                             <ul>
-                                <li id="first-xyj"><a href="javascript:void(0);">第一期</a></li>
+                                <li id="first-xyj" @click=""><a href="javascript:void(0);">第一期</a></li>
                                 <li id="second-xyj"><a href="javascript:void(0);">第二期</a></li>
                                 <li id="third-xyj"><a href="javascript:void(0);">第三期</a></li>
                             </ul>
                         </div>
                     </td>
-                    <td class="" id="show-firstWeek"><img src="./assets/img/First-week.png">
+                    <td class="" id="show-firstWeek" @click="change(0)"><img src="./assets/img/First-week.png">
                         <span class="container_going    container_current"></span>
                     </td>
-                    <td class="" id="show-secondWeek"><img src="./assets/img/Second-weeks.png">
+                    <td class="" id="show-secondWeek" @click="change(1)"><img src="./assets/img/Second-weeks.png">
                         <span class="container_going"></span>
                     </td>
-                    <td class="" id="show-thirdWeek"><img src="./assets/img/Third-weeks.png">
+                    <td class="" id="show-thirdWeek" @click="change(2)"><img src="./assets/img/Third-weeks.png">
                         <span class="container_going"></span>
                     </td>
-                    <td class="" id="show-monthWeek"><img src="./assets/img/Month.png">
+                    <td class="" id="show-monthWeek" @click="change(3)"><img src="./assets/img/Month.png">
                         <span class="container_going"></span>
                     </td>
                 </tr>
@@ -70,7 +71,7 @@
         <div class="imgs">
             <img src="./assets/img/25.jpg" alt="">
         </div>
-    </div> 
+    </div>  -->
   </div>
 </template>
 
@@ -171,12 +172,7 @@ img{
 .month_show {
     position: relative;
 }
-.month-dis{
-    display:none;
-}
-.month-show{
-    display: block;
-}
+
 .month_show > div{
     position: absolute;
     z-index: 99;
