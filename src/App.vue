@@ -33,7 +33,7 @@
             <tbody>
                 <tr>
                     <td class="month_show">
-                        <img src="./assets/img/Second-month.png" style="width:100%;">
+                        <img src="./assets/img/First-month.png" style="width:100%;">
                         <span><img src="./assets/img/xiala2.png" alt=""></span>
                         <div class="month-dis">
                             <ul>
@@ -44,13 +44,13 @@
                         </div>
                     </td>
                     <td class="" id="show-firstWeek"><img src="./assets/img/First-week.png">
-                        <span class="container_going"></span>
+                        <span class="container_going    container_current"></span>
                     </td>
                     <td class="" id="show-secondWeek"><img src="./assets/img/Second-weeks.png">
                         <span class="container_going"></span>
                     </td>
                     <td class="" id="show-thirdWeek"><img src="./assets/img/Third-weeks.png">
-                        <span class="container_going   container_current"></span>
+                        <span class="container_going"></span>
                     </td>
                     <td class="" id="show-monthWeek"><img src="./assets/img/Month.png">
                         <span class="container_going"></span>
@@ -79,23 +79,14 @@
   import Vheader from './components/Vheader'
 
 export default {
-  name: 'Home',
   components: {
     Hello,
     Vheader
   },
   data () {
     return {
-        msg: [        
-          {
-            name : '倪',
-            num:213
-          },
-          {
-            name : 'Monologue',
-            num:151
-          },
-      ]
+
+      
     }
   }
 }
